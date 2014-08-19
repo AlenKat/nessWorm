@@ -1,0 +1,8 @@
+#ignore every .pyc file specific for the project
+*.pyc
+
+#ignore migrations folder
+migrations
+
+#ignore database
+db.sqlite3
