@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Your badges:{% endblock %}
+
+{% block info %}Your badges:{% endblock %}
+
+{% block content %}
+<ul>
+	{% for badge_name in badges_name %}
+	<li>
+		{{badge_name}}
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
