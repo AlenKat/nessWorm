@@ -5,9 +5,9 @@
 
 {% block content %}
 <ul>
-	{% for badge_name in badges_name %}
+	{% for badge in badges %}
 	<li>
-		{{badge_name}}
+		{{badge.counter.name}} : {{badge.value}}, {{badge.user.username}}
 	</li>
 	{% endfor %}
 </ul>
