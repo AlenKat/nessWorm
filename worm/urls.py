@@ -11,5 +11,6 @@ urlpatterns = patterns('worm.views',
 
     #url(r'/hello', 'view_all'),
     # url(r'/list/(?P<name>.+)$', views.BadgeUserListView.as_view(), name = 'badge_list'),
-    url(r'^/list/(?P<name>.+)$', views.BadgeUserListView.as_view(), name = 'badges_list'),
+    url(r'^/list/(?P<name>.+)$', views.BadgeUserListView.as_view(), name='badges_list'),
+    url(r'^/connect', views.Connect.as_view()),
 )
