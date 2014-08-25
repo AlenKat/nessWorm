@@ -17,4 +17,5 @@ urlpatterns = patterns('worm.views',
     url(r'^/list$', 'listing', name = 'badges_list'),
     url(r'^/contact$', views.Contact.as_view(), name = 'contact'),
     url(r'^/login$', views.LogIn.as_view(), name = 'login'),
+    url(r'^/connect', views.Connect.as_view()),
 )
