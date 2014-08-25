@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 #     os.path.join(BASE_DIR, "static"),
 # )
 STATICFILES_DIRS = (
-    "/home/katarina/NESSproject/static",
+    # "/home/katarina/NESSproject/static",
+    os.path.join(BASE_DIR, "static"),
 )
 
 INSTALLED_APPS = (

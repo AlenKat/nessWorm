@@ -1,6 +1,6 @@
 from django.shortcuts import render, render_to_response, HttpResponse
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, TemplateView
-from worm.models import Counter, Badge, User
+from worm.models import Badge, Achievment, User
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django_facebook.models import FacebookCustomUser
 from open_facebook import OpenFacebook
@@ -28,7 +28,7 @@ class Home(TemplateView):
 
 
 def listing(request):
-	badges_list = Badge.objects.filter(user=FacebookCustomUser.objects.filter(username="vancikova"))
+	badges_list = Achievment.objects.filter(user=FacebookCustomUser.objects.filter(username="katarina"))
 	paginator = Paginator(badges_list, 3)
 
 	page = request.GET.get('page')
