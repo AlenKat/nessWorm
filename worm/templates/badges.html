@@ -1,14 +1,41 @@
 {% extends "base.html" %}
-{% block title %}Your badges:{% endblock %}
-
-{% block info %}Your badges:{% endblock %}
-
-{% block content %}
-<ul>
-	{% for badge in badges %}
-	<li>
-		{{badge.counter.name}} : {{badge.value}}, {{badge.user.username}}
-	</li>
-	{% endfor %}
-</ul>
-{% endblock %}
+{% block content %}    
+    <h2>Lorem ipsum</h2>
+      <h3>Lorem ipsum</h3>
+      {% load static from staticfiles %}
+        <div class="content_item">
+      	      <ul id="badges_list">
+                        <div class="arrow">
+                {% if badges.has_previous %}
+      <a href="/badges/list?page={{ badges.previous_page_number }}"><img width="30" height="30" src="{% static "images/left.png" %}"></a>
+                            </div>
+                {% endif %}
+                        {% for badge in badges %}
+                            <li>
+                            {% if badge.value %}
+                              <div id= "badge_true" >
+                                {{badge.counter.name}} : {{badge.user.username}}
+                              </div>
+                              {% else %}
+                                <div id ="badge_false">
+                                  {{badge.counter.name}} : {{badge.user.username}}
+                                </div>
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                        <div class="arrow">
+                            {% if badges.has_next %}
+      <a href="/badges/list?page={{ badges.next_page_number }}"><img width="30" height="30" src="{% static "images/right.png" %}"></a>
+                            {% endif %}
+                            </div>
+              </ul>
+                    <div class="pagination">
+                        <span class="page-links">
+                            <span class="page-current">
+                                Page {{ badges.number }} of {{ badges.paginator.num_pages }}.
+                            </span>
+                        </span>
+                    </div>
+              <p>&nbsp;</p>
+		    </div>
+{% endblock content %}

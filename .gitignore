@@ -3,6 +3,3 @@
 
 #ignore migrations folder
 migrations
-
-#ignore database
-db.sqlite3

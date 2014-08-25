@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+print(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,6 +29,14 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# MEDIA_ROOT = os.path.join(SITE_ROOT, 'static')
+# MEDIA_URL = '/static/'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
+STATICFILES_DIRS = (
+    "/home/katarina/NESSproject/static",
+)
 
 INSTALLED_APPS = (
     'django.contrib.admin',

@@ -1,19 +1,64 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-	<title>
-		{% block title %}
-			Welcome
-		{% endblock %}
-	</title>
+  <title>WARm</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  {% load static from staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}"/>
+  <script type="text/javascript" src= "{% static "js/jquery.min.js" %}"></script>
+  <script type="text/javascript" src= "{% static "js/image_slide.js" %}"></script>
 </head>
+
 <body>
-	<h1>
-		{% block info %}
-			Welcome on the badges site
-		{% endblock %}
-		</h1>
-	{% block content %}
-		
-	{% endblock %}
+  <div id="main">
+    <div id="header">
+      <div id="banner" class = "Three-Dee">
+	    <a href="#">WARm GAME</a>
+	  </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Game</a></li>
+          <li><a href="{% url 'badges_list' %}">Badges</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li class="last"><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+       <ul class="slideshow">
+        <li class="show"><img width="880" height="350" src="{% static "images/uvod.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
+        <li><img width="880" height="350" src="{% static "images/spustit.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
+        <li><img width="880" height="350" src="{% static "images/zaciatok.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
+        <li><img width="880" height="350" src="{% static "images/otocka.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
+        <li><img width="880" height="350" src="{% static "images/otazka.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
+      </ul>     
+	  <div id="content">
+      {% block content %} 
+        <p> Here I can write whatever I want </p>
+      {% endblock content %}
+    </div>
+      <!-- <div class="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+    </div> -->
+    <div id="footer">
+    </div>
+  </div>
+  <p style="float: left;padding: 0;">&nbsp;</p>
 </body>
 </html>
