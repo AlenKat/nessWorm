@@ -209,7 +209,7 @@ ul#menu li a:hover
 { /*margin-top: 20px;
   margin-bottom: 20px;*/
   text-align: center;
-  width: 850px;
+  width: 880px;
   height: 500px;
   float: left;}
 
@@ -223,6 +223,8 @@ ul#badges_list li
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .arrow{
@@ -246,6 +248,11 @@ ul#badges_list li
   background: #23c033;
   border-radius: 25px;
 }
+
+.about{
+  font: normal 80% arial;
+}
+
 
 #content
 { /*text-align: left;*/

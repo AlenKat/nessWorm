@@ -6,20 +6,22 @@ from django_facebook.models import FacebookCustomUser
 # Create your models here.
 
 
-class Counter(models.Model):
+class Badge(models.Model):
     name = models.CharField('name', max_length=20, unique=True)
+    about = models.CharField('about', max_length= 50)
+    value = models.IntegerField('value')
 
     def __unicode__(self):
         return "badge '{0}'".format(self.name)
 
 
-class Badge(models.Model):
-    value = models.BooleanField('value')
+class Achievment(models.Model):
+    state = models.BooleanField('state')
     user = models.ForeignKey(FacebookCustomUser)
-    counter = models.ForeignKey('Counter', related_name='counter')
+    badge = models.ForeignKey('Badge', related_name='badge')
 
     def __unicode__(self):
-        return "Badge: '{0}' : {1}, {2}".format(self.counter.name, self.value, self.user.username)
+        return "Badge: '{0}' : {1}, {2}".format(self.badge.name, self.state, self.user.username)
 
 	def get_absolute_url(self):
 		return reverse('badges_list', kwargs = {'name' : self.user})
