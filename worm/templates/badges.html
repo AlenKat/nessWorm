@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}    
-    <h2>Lorem ipsum</h2>
-      <h3>Lorem ipsum</h3>
+    <h1 style=>Your badges:</h1>
       {% load static from staticfiles %}
         <div class="content_item">
+        {{temp}}
+    {% if user.is_authenticated %}
       	      <ul id="badges_list">
                         {% for badge in badges %}
                             <li>
                             {% if badge.state %}
                               <div id= "badge_true" >
                                 {{badge.badge.name}}
-                                <div class = "about" >{{badge.badge.about}} </div>
+                                <div class = "about" >{{badge.badge.about}}  </div>
                               </div>
                               {% else %}
                                 <div id ="badge_false">
@@ -38,6 +39,9 @@
                             </div>
                         </span>
                     </div>
+    {% else %}
+        <h2>You are not loged in. You have to login first to see your badges!</h2>
+    {% endif %}
               <p>&nbsp;</p>
 		    </div>
 {% endblock content %}

@@ -28,9 +28,10 @@ class Home(TemplateView):
 
 
 def listing(request):
-	badges_list = Achievment.objects.filter(user=FacebookCustomUser.objects.filter(username="katarina"))
+	badges_list = Achievment.objects.filter(user=FacebookCustomUser.objects.filter(username=request.user))
 	paginator = Paginator(badges_list, 3)
-
+	temp = request.user
+	print temp
 	page = request.GET.get('page')
 	try:
 		badges = paginator.page(page)
@@ -39,7 +40,7 @@ def listing(request):
 	except EmptyPage:
 		badges = paginator.page(paginator.num_pages)
 
-	return render_to_response('badges.html', {"badges": badges})
+	return render_to_response('badges.html', {"badges": badges })
 
 
 class AboutGame(TemplateView):
