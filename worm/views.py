@@ -49,7 +49,7 @@ class Contact(TemplateView):
 	template_name = 'contact.html'
 
 class LogIn(TemplateView):
-	template_name = 'login.html'
+	template_name = 'connect.html'
 
 class Connect(TemplateView):
     template_name = 'connect.html'

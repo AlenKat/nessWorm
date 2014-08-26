@@ -18,6 +18,7 @@
       <div id="banner" class = "Three-Dee">
 	    <a href="#">WARm GAME</a>
 	  </div>
+    <div id= "all_content">
       <div id="menubar">
         <ul id="menu">
           <li><a href="{% url 'home' %}">Home</a></li>
@@ -29,17 +30,19 @@
       </div>
     </div>
     <div id="site_content">
+    <div class= "slideshow_background"> 
        <ul class="slideshow">
-        <li class="show"><img width="880" height="350" src="{% static "images/uvod.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
-        <li><img width="880" height="350" src="{% static "images/spustit.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
-        <li><img width="880" height="350" src="{% static "images/zaciatok.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
-        <li><img width="880" height="350" src="{% static "images/otocka.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
-        <li><img width="880" height="350" src="{% static "images/otazka.png" %}" alt="&quot;Enter your caption here&quot;" /></li>
-      </ul>     
+        <li class="show"><img width="880" height="350" src="{% static "images/uvod.png" %}"/> </li>
+        <li><img width="880" height="350" src="{% static "images/spustit.png" %}"/></li>
+        <li><img width="880" height="350" src="{% static "images/zaciatok.png" %}"/> </li>
+        <li><img width="880" height="350" src="{% static "images/otocka.png" %}"/> </li>
+        <li><img width="880" height="350" src="{% static "images/otazka.png" %}"/> </li> <!-- alt="&quot;Enter your caption here&quot;" /> -->
+      </ul>
 	  <div id="content">
       {% block content %} 
         <p> Here I can write whatever I want </p>
       {% endblock content %}
+    </div>
     </div>
       <!-- <div class="sidebar_container">
         <div class="sidebar">

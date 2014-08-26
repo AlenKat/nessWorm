@@ -6,7 +6,10 @@ html
   padding: 0;}
 
 body
-{ font: normal .80em arial, sans-serif;
+{   margin:0;
+  padding:0;
+  height:100%;
+  font: normal .80em arial, sans-serif;
   background: transparent;
   color: #000;}
 
@@ -73,7 +76,8 @@ ol li
   margin-right: auto;}
 
 #main
-{ height: 500px;
+{ 
+  height: 500px;
   background: linear-gradient(#69de45, white);
 }
 
@@ -340,7 +344,7 @@ ul.links li a:hover
 ul.slideshow {
   list-style: none;
   width: 880px;
-  height: 380px;
+  height: 300px;
   overflow: hidden;
   position: relative;
   margin: 0;
